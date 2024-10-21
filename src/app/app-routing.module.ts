@@ -5,33 +5,30 @@ import { AboutPageComponent } from './shared/pages/about-page/about-page.compone
 import { ContactPageComponent } from './shared/components/contact-page/contact-page.component';
 
 const routes: Routes = [
-  {
-    path: '',
-    component: HomePageComponent
-  },
+  // {
+  //   path: '',
+  //   component: HomePageComponent
+  // },
   {
     path: 'About',
     component: AboutPageComponent
   },
   {
     path: 'Contact',
-    component:ContactPageComponent
+    component: ContactPageComponent
   },
   {
-    path: 'Countries',
-    component:ContactPageComponent
+    path: 'countries',
+    loadChildren:() => import('./countries/countries.module').then(m => m.CountriesModule)
   },
-  {
-    path: '**',
-    redirectTo: ''
-  }
+
 ];
 
 @NgModule({
-  imports:[
+  imports: [
     RouterModule.forRoot(routes),
   ],
-  exports:[
+  exports: [
     RouterModule
   ]
 })
