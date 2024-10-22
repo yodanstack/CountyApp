@@ -12,6 +12,7 @@ import { RegionTableComponent } from './components/region-table/region-table.com
 
 
 
+
 @NgModule({
   declarations: [
     BycapitalpageComponent,
@@ -19,12 +20,18 @@ import { RegionTableComponent } from './components/region-table/region-table.com
     ByregionpageComponent,
     CountryPageComponent,
     CountryTableComponent,
-    RegionTableComponent
+    RegionTableComponent,
+    CountryTableComponent,
   ],
   imports: [
     CommonModule,
     CountriesRoutingModule,
-    SharedModule
+    SharedModule,
+
+],
+exports:[
+  CountryTableComponent,
+
 ]
 })
 export class CountriesModule { }

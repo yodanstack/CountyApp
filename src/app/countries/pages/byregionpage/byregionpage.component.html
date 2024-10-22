@@ -1,1 +1,17 @@
-<region-table [region]="region"></region-table>
+<h2>Por region</h2>
+
+<hr>
+
+<div class="row">
+  <div class="col">
+    <!-- SearchBox -->
+    <app-search-box (onValue)="seacrhByregion($event)" placeholder="Buscar..."></app-search-box>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col">
+    <hr>
+    <region-table [region]="region "></region-table>
+  </div>
+</div>
