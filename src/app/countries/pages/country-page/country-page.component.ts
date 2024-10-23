@@ -14,7 +14,7 @@ import { Country } from '../../interfaces/country';
 export class CountryPageComponent implements OnInit {
 
 
-  public countres?: Country[] = [];
+  public country?: Country;
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -25,13 +25,13 @@ export class CountryPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.activatedRoute.params.pipe(
-      switchMap( ({id}) => this.CountriesService.searchCountryAlphaCode(id) )
+      switchMap( ({id}) => this.CountriesService.searchCountryAlphaCode(id)),
      )
     .subscribe(( country ) => {
         if(!country ) {
           return this.router.navigateByUrl('');
         }
-        this.countres = this.countres
+        this.country = this.country
         return
     });
   }
